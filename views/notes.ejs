@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="body_2">
+    <H1>BUCKET OF BOOKS</H1>
+    <H1>WITH MUGS OF NOTES</H1>
+    <img class="imgs_2" src="https://covers.openlibrary.org/b/isbn/<%= data.isbn %>.jpg" />
+    <H1><%= data.name %></H1>
+    <p>Uploded on : <%= data.date_read %></p>
+    <p>ISBN : <%= data.isbn %></p>
+    <p>Ratings : <%= data.ratings %>/10</p>
+    <br>
+    <p>(Back to my <a href="/">list of books</a>.)</p>
+    <h1>My Notes</h1>
+    <h3><%= data.notes %></h3>
+
+</body>
+</html>

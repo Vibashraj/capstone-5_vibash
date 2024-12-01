@@ -1,0 +1,48 @@
+.whole{
+    background-color: bisque;
+    
+}
+
+.intro{
+    height: 300px;
+    background-color: antiquewhite;
+}
+
+.description{
+    width: 800px;
+
+}
+
+.menu_bar{
+    margin-left: 1100px;
+}
+
+.book_box{
+    background-color: aqua;
+    height: 300px;
+}
+
+.imgs{
+    margin: 10px;
+    float: left;
+    height: 100px;
+    width: 80px;
+}
+
+
+
+
+.body_2{
+    background-color: aqua;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.imgs_2{
+    height: 160px;
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}

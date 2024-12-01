@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone 5</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../index.js"></script>
+    <style>
+      /* Initially hide the dropdown options */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+      }
+
+      /* Style the links inside the dropdown */
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown-content a:hover {
+          background-color: #ddd;
+      }
+  </style>
+</head>
+<body>
+   <div class="whole">
+
+    <div class ="intro">
+       <H1>BUCKET OF BOOKS</H1>
+       <H1>WITH MUGS OF NOTES</H1>
+
+       <div class="description"><h2>This website contains collections of book along with its notes.This website is devoloped in the motive of saving time of the users 
+        and giving them a clear view about the book.</h2>
+       </div>
+
+       <div class="menu_bar">
+
+        <div class="dropdown">
+          <button class="dropbtn">Sort By</button>
+          <div class="dropdown-content">
+              <a href="S_R">Rating</a>
+              <a href="S_A">Alphabetical order</a>
+              <a href="S_N">Newest</a>
+          </div>
+        </div>
+
+        <script>
+          // If you want more control with JavaScript, you can use this instead
+          const dropdownButton = document.querySelector('.dropbtn');
+          const dropdownContent = document.querySelector('.dropdown-content');
+  
+          dropdownButton.addEventListener('click', function() {
+              dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+          });
+  
+          // Close the dropdown if clicked outside of it
+          window.addEventListener('click', function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                  if (dropdownContent.style.display === 'block') {
+                      dropdownContent.style.display = 'none';
+                  }
+              }
+          });
+        </script>
+
+       </div>
+
+    </div>
+
+       <% book.forEach(a => { %>
+
+        <div class="book_box">
+
+        <img class="imgs" src="https://covers.openlibrary.org/b/isbn/<%= a.isbn %>-S.jpg" />
+               
+        <form id="link_<%= a.name %>" action="link" method="post">  
+            <input type="hidden" id ="datavalue" name="datavalue" value=' <%= a.id  %>' >
+        </form>
+
+        <h1><a href="#" onclick="document.getElementById('link_<%= a.name %>').submit()"> <%= a.name %> </a></h1>
+
+        <h4>Uploded on : <%= a.date_read %> . Ratings out of 10 : <%= a.ratings %></h4>
+        <h2>Summary </h2>
+        <h3><%= a.summary %></h3>
+        <h3>Read my <a href="#" onclick="document.getElementById('link_<%= a.name %>').submit()" >notes</a></h3>
+
+        
+
+        </div>
+        
+        <% }) %>
+
+
+   </div>
+   
+</body>
+</html>
